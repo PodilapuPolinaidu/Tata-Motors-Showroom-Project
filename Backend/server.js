@@ -10,28 +10,27 @@ app.use(express.json());
 function getUser(callback) {
   connection.query("select * from users", (err, result) => {
     if (err) {
+      console.error("Database query error:", err); // Print the error
       callback(err, null);
-      // return err;
     } else {
-      callback(result, null);
-      // return result;
+      callback(null, result);
     }
   });
 }
 
 app.post("/addUser", (req, res) => {
   const user = req.body;
-  getUser((result, err) => {
+  getUser((err, result) => {
     if (err) {
+      console.log("vhb");
       return res.status(500).send("Database error", err);
     }
     const userExists = result.some((item) => item.Email == user.Email);
-    // console.log(userExists)
     if (!userExists) {
       connection.query("INSERT INTO users SET ?", [user], (error, results) => {
         if (error) {
           console.error("Error inserting data:", error);
-          return;
+          return res.status(500).send("Database error");
         }
         return res.status(200).send({ exists: false });
       });
@@ -44,14 +43,11 @@ app.post("/addUser", (req, res) => {
 app.post("/loginUser", (req, res) => {
   const user = req.body;
   // console.log(user)
-  getUser((list, err) => {
+  getUser((err, list) => {
     if (err) {
-      return err;
+      return res.status(500).send("Database error", err);
     }
-    // console.log(list)
     const userStatus = list.find((loginUser) => loginUser.Email == user.Email);
-    // console.log(userStatus)
-    // console.log(userStatus)
     if (!userStatus) {
       return res
         .status(400)
@@ -61,7 +57,7 @@ app.post("/loginUser", (req, res) => {
     if (!passwordStatus) {
       return res.status(400).send({ message: "Incorrect Password" });
     }
-    return res.status(200).send({ status: true, message: "Login Successul" });
+    return res.status(200).send({ status: true, message: "Login Successful" });
   });
 });
 app.listen(3000, () => {
