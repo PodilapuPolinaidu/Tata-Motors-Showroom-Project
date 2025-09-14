@@ -1,0 +1,587 @@
+/* Base styles */
+.car-detail-page {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.loading {
+  text-align: center;
+  padding: 50px;
+  font-size: 1.2rem;
+}
+
+/* Header section */
+/* ----- Premium Car Detail Header ----- */
+.car-detail-header {
+  position: relative;
+  padding: 60px 5% 80px;
+  margin: 0 auto 40px;
+  color: #fff;
+  background: linear-gradient(
+    89deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  overflow: hidden;
+  max-width: 1400px;
+  border-radius: 0 0 12px 12px;
+}
+
+.header-content {
+  position: relative;
+  z-index: 3;
+  max-width: 520px;
+}
+
+.header-content h1 {
+  font-size: 2.7rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+}
+
+.header-content h2 {
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin: 0 0 28px;
+  opacity: 0.9;
+  line-height: 1.4;
+}
+
+/* Image Treatment */
+.main-car-image {
+  position: absolute;
+  right: 15%;
+  bottom: 0;
+  height: 95%;
+  max-height: 500px;
+  z-index: 2;
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.3));
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Price Tag */
+.price-range {
+  display: inline-block;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 30px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Badge */
+.badge {
+  display: inline-block;
+  padding: 5px 12px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-right: 12px;
+  vertical-align: middle;
+}
+
+/* Book Now Button */
+.book-now-button {
+  background: #fff;
+  color: #111;
+  border: none;
+  padding: 14px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.book-now-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ----- Responsive Design ----- */
+@media (max-width: 1024px) {
+  .main-car-image {
+    height: 55%;
+    right: 2%;
+  }
+}
+
+@media (max-width: 768px) {
+  .car-detail-header {
+    padding: 40px 5% 60px;
+    text-align: center;
+  }
+
+  .header-content {
+    max-width: 100%;
+  }
+
+  .main-car-image {
+    position: relative;
+    height: auto;
+    width: 90%;
+    max-width: 400px;
+    margin: 30px auto 0;
+    right: auto;
+  }
+
+  .header-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .header-content h2 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .header-content h2 {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
+
+  .book-now-button {
+    padding: 12px 24px;
+  }
+}
+/* Color selector */
+.color-selector {
+  margin: 30px 0;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+.color-selector h3 {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.color-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.color-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+  gap: 2px;
+  transition: all 0.2s ease;
+}
+
+.color-option:hover {
+  background-color: #eee;
+}
+
+.color-option.active {
+  /* background-color: #ddd; */
+  border: 1px solid black;
+  font-weight: bold;
+}
+
+.color-swatch {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-bottom: 5px;
+  transition: transform 0.2s ease;
+}
+
+.color-option:hover .color-swatch {
+  transform: scale(1.1);
+}
+
+/* Tabs navigation */
+.detail-tabs {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  margin: 30px 0 20px;
+}
+
+.tab-button {
+  padding: 12px 25px;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  position: relative;
+  color: #666;
+  font-weight: 500;
+}
+
+.tab-button.active {
+  color: #0066cc;
+  font-weight: 600;
+}
+
+.tab-button.active::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #0066cc;
+}
+
+/* Tab content */
+.tab-content {
+  margin-bottom: 40px;
+}
+
+/* Specifications */
+.specifications h2 {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  color: #222;
+}
+
+.spec-group {
+  margin-bottom: 30px;
+}
+
+.spec-group h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #444;
+}
+
+.spec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.spec-item {
+  display: flex;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+.spec-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.spec-icon {
+  font-size: 1.5rem;
+  color: #0066cc;
+  margin-right: 15px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spec-details h4 {
+  margin: 0 0 5px;
+  font-size: 1rem;
+  color: #555;
+}
+
+.spec-details p {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #222;
+}
+
+.more-info-btn {
+  background: none;
+  border: none;
+  color: #0066cc;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 5px 0;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.spec-details-expanded {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  border-left: 3px solid #0066cc;
+}
+
+.spec-details-expanded p {
+  font-size: 0.9rem;
+  margin: 5px 0;
+}
+
+/* Features */
+.features h2 {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  color: #222;
+}
+
+.feature-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.feature-category {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.feature-category h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #0066cc;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 8px;
+}
+
+.feature-category ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feature-category li {
+  padding: 8px 0;
+  border-bottom: 1px dashed #ddd;
+  font-size: 0.95rem;
+}
+
+.feature-category li:last-child {
+  border-bottom: none;
+}
+
+/* Variants */
+.variants h2 {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  color: #222;
+}
+
+.variant-table {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th {
+  background-color: #0066cc;
+  color: white;
+  text-align: left;
+  padding: 12px 15px;
+  font-weight: 500;
+}
+
+td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+  vertical-align: top;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+.variant-features {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.variant-features li {
+  padding: 3px 0;
+  font-size: 0.9rem;
+}
+
+/* Warranty & Service */
+.warranty-service h2 {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  color: #222;
+}
+
+.warranty-card,
+.service-card {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.warranty-item,
+.service-item {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #0066cc;
+}
+
+.warranty-item h3,
+.service-item h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.warranty-item p,
+.service-item p {
+  margin: 0;
+  font-size: 1rem;
+  color: #222;
+}
+
+/* Gallery */
+.gallery {
+  margin: 50px;
+}
+
+.gallery h2 {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  color: #222;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 20px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Buttons */
+.back-button {
+  background: none;
+  border: none;
+  color: #0066cc;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 10px 0;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.back-button:hover {
+  text-decoration: underline;
+}
+
+.book-now-button {
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.book-now-button:hover {
+  background-color: #e64a19;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .car-detail-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header-content {
+    margin-bottom: 20px;
+  }
+
+  .detail-tabs {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 5px;
+  }
+
+  .spec-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-categories {
+    grid-template-columns: 1fr;
+  }
+
+  .warranty-card,
+  .service-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-content h1 {
+    font-size: 2rem;
+  }
+
+  .header-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .color-options {
+    justify-content: center;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}

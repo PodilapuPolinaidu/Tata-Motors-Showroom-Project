@@ -1,0 +1,417 @@
+/* ------------------ */
+/* Base Styles        */
+/* ------------------ */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background: #f5f5f5;
+}
+
+.car-promo-container {
+  margin-top: 10px;
+  padding: 30px 140px;
+}
+
+/* ------------------ */
+/* Top Section Styles */
+/* ------------------ */
+
+/* Hero wrapper */
+.hero-wrapper {
+  margin-bottom: 60px;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Hero layout */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Reverse layout for even ID cars */
+.hero.reverse-layout {
+  flex-direction: row-reverse;
+}
+
+/* Left section (image container) */
+.left {
+  flex: 0 0 40%;
+  background: #f0e5da;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.left img.car {
+  width: 90%;
+  max-width: 400px;
+  transition: transform 0.3s ease;
+  margin-left: 70%; /* Customize based on layout need */
+}
+
+.left img.car:hover {
+  transform: scale(1.05);
+}
+
+/* Color selection dots */
+.color-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.color-dots span {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  transition: transform 0.2s ease;
+}
+
+/* Right content section */
+.right {
+  flex: 0 0 60%;
+  padding: 40px 140px;
+  background: #fff;
+}
+
+.right h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+  color: #2b2b2b;
+  line-height: 1.2;
+}
+
+.right h3 {
+  font-size: 22px;
+  color: #555;
+  margin-top: 0;
+}
+
+.right p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #555;
+  max-width: 500px;
+  margin-top: 20px;
+}
+
+/* Buttons */
+.buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+.buttons a {
+  display: inline-block;
+  margin-right: 20px;
+  color: #fff;
+  background-color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 10px 16px;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.buttons a:hover {
+  background-color: #0056b3;
+}
+
+/* ------------------------------- */
+/* Top Section – Reversed Layout  */
+/* ------------------------------- */
+
+.hero.reverse-layout {
+  flex-direction: row-reverse;
+}
+
+.hero.reverse-layout .left {
+  flex: 0 0 40%;
+  background: #f0e5da;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero.reverse-layout .left img.car {
+  width: 90%;
+  max-width: 400px;
+  margin-right: 70%; /* Push image to the left when reversed */
+  margin-left: 0;
+  transition: transform 0.3s ease;
+}
+
+.hero.reverse-layout .left img.car:hover {
+  transform: scale(1.05);
+}
+
+.hero.reverse-layout .right {
+  flex: 0 0 60%;
+  padding: 40px 140px;
+  background: #fff;
+  text-align: left;
+}
+
+.hero.reverse-layout .right h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+  color: #2b2b2b;
+  line-height: 1.2;
+}
+
+.hero.reverse-layout .right h3 {
+  font-size: 22px;
+  color: #555;
+  margin-top: 0;
+}
+
+.hero.reverse-layout .right p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #555;
+  max-width: 500px;
+  margin-top: 20px;
+}
+
+.hero.reverse-layout .buttons {
+  margin-top: 30px;
+}
+
+.hero.reverse-layout .buttons a {
+  display: inline-block;
+  margin-right: 20px;
+  color: #fff;
+  background-color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 10px 16px;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.hero.reverse-layout .buttons a:hover {
+  background-color: #0056b3;
+}
+
+/* ------------------ */
+/* Bottom Section     */
+/* ------------------ */
+.bottom {
+  display: flex;
+  flex-wrap: wrap;
+  background: #fff;
+}
+
+/* Default layout: first image 40%, second 60% */
+.bottom img:nth-child(1) {
+  flex: 0 0 40%;
+  width: 40%;
+}
+
+.bottom img:nth-child(2) {
+  flex: 0 0 60%;
+  width: 60%;
+}
+
+/* Reversed layout */
+.bottom.reverse-bottom {
+  flex-direction: row-reverse;
+}
+
+.bottom.reverse-bottom img:nth-child(1) {
+  flex: 0 0 40%;
+  width: 40%;
+}
+
+.bottom.reverse-bottom img:nth-child(2) {
+  flex: 0 0 60%;
+  width: 60%;
+}
+
+/* Common image styles */
+.bottom img {
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  max-height: 400px;
+}
+
+/* ------------------ */
+/* Responsive Styles  */
+/* ------------------ */
+
+/* Tablets (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+  .car-promo-container {
+    padding: 30px 60px;
+  }
+
+  .right,
+  .hero.reverse-layout .right {
+    padding: 40px 60px;
+  }
+
+  .right h1,
+  .hero.reverse-layout .right h1 {
+    font-size: 36px;
+  }
+
+  .right h3,
+  .hero.reverse-layout .right h3 {
+    font-size: 20px;
+  }
+
+  .right p,
+  .hero.reverse-layout .right p {
+    font-size: 15px;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  .hero,
+  .hero.reverse-layout {
+    flex-direction: column;
+  }
+
+  .left,
+  .hero.reverse-layout .left,
+  .right,
+  .hero.reverse-layout .right {
+    flex: 0 0 100%;
+    width: 100%;
+    padding: 30px 20px;
+  }
+
+  .left img.car,
+  .hero.reverse-layout .left img.car {
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .right h1,
+  .hero.reverse-layout .right h1 {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .right h3,
+  .hero.reverse-layout .right h3 {
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .right p,
+  .hero.reverse-layout .right p {
+    font-size: 14px;
+    text-align: center;
+    margin: 10px auto;
+  }
+
+  .buttons,
+  .hero.reverse-layout .buttons {
+    text-align: center;
+  }
+
+  .buttons a,
+  .hero.reverse-layout .buttons a {
+    display: inline-block;
+    margin: 10px 8px;
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+
+  .bottom,
+  .bottom.reverse-bottom {
+    flex-direction: column;
+  }
+
+  .bottom img,
+  .bottom.reverse-bottom img {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    max-height: 250px;
+  }
+
+  .color-dots {
+    bottom: 10px;
+  }
+  .color-dots span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    transition: transform 0.2s ease;
+  }
+}
+
+/* Small Devices (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  .right h1 {
+    font-size: 24px;
+  }
+
+  .right h3 {
+    font-size: 16px;
+  }
+
+  .right p {
+    font-size: 13px;
+  }
+
+  .buttons a {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+}
+.learn-more-btn {
+  background: #0066cc;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.learn-more-btn:hover {
+  background: #0052a3;
+  color: white;
+}
+
+.secondary-btn {
+  background: transparent;
+  color: #0066cc;
+  border: 1px solid #0066cc;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.secondary-btn:hover {
+  background: #f0f7ff;
+}

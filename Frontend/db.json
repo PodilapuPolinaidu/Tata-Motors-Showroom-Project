@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "id": "14af",
+      "name": "qwertyuiop",
+      "email": "qwertyuiop@gmail.com",
+      "password": "qwertyuiop",
+      "createdAt": "2025-07-06T07:40:21.498Z"
+    },
+    {
+      "id": "3106",
+      "name": "Charan",
+      "email": "charan21@gmail.com",
+      "password": "Charan21@",
+      "createdAt": "2025-07-06T07:43:31.054Z"
+    },
+    {
+      "id": "0dc6",
+      "name": "aaaaaa",
+      "email": "aaaaaa@gmail.com",
+      "password": "aaaaaaa",
+      "createdAt": "2025-07-06T07:45:37.156Z"
+    },
+    {
+      "id": "539f",
+      "name": "rtttt",
+      "email": "wer@gmail.com",
+      "password": "qweqwqw",
+      "createdAt": "2025-07-06T07:58:24.503Z"
+    },
+    {
+      "id": "f74f",
+      "name": "qwertyip",
+      "email": "qwertasasyuiop@gmail.com",
+      "password": "1234567890",
+      "createdAt": "2025-07-07T03:48:32.918Z"
+    },
+    {
+      "id": "9196",
+      "name": "CHARAN KUMAR",
+      "email": "charankumarck@gmail.com",
+      "password": "charankumarck@",
+      "createdAt": "2025-07-07T12:26:44.831Z"
+    }
+  ]
+}
