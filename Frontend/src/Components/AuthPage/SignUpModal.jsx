@@ -118,7 +118,7 @@ const SignUpModal = () => {
             title: "Registration",
             text: "You can directly login now. User is aready existed",
           });
-          return
+          return;
         } else {
           Swal.fire({
             title: "Done",
