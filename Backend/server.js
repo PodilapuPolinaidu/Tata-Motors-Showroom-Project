@@ -20,6 +20,7 @@ function getUser(callback) {
 
 app.post("/addUser", (req, res) => {
   const user = req.body;
+  console.log(user);
   getUser((err, result) => {
     if (err) {
       console.log("vhb");

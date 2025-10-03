@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import Carshow from "../Carshownav/Carshow";
 import logo from "../../assets/tatalogo.png";
 import video1 from "../../assets/slide1.mp4";
-// import video1 from "../../assets/slide4.avif";
 
 import image2 from "../../assets/slide2.avif";
 import image3 from "../../assets/slide3.avif";
